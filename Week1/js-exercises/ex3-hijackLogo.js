@@ -1,10 +1,13 @@
+'use strict';
 /**
  
  ** Exercise 3: The logo hijack **
  
- No homepage is safe from the logo bandit!Everytime he sees a Google Logo he replaces it with a logo from HackYourfuture instead: https: //www.hackyourfuture.dk/static/logo-dark.svg.
+ No homepage is safe from the logo bandit! Everytime he sees a Google Logo he replaces 
+ it with a logo from HackYourfuture instead: https: //www.hackyourfuture.dk/static/logo-dark.svg.
 
- In this exercise you 're expected to write a JavaScript function that can be executed in the console of the [Google website](https://www.google.com).
+ In this exercise you 're expected to write a JavaScript function that can be executed in the 
+ console of the [Google website](https://www.google.com).
 
  
  1. Find out how to select the element that contains the Google logo, and store it in a variable.
@@ -14,6 +17,21 @@
 
 function hijackGoogleLogo() {
   // your code goes in here
+
+  // const will look for the google homepage logo
+  let googleLogo = document.querySelector('#hplogo');
+
+  // create hyf image element & set attributes to replace google logo with
+  let hyfLogo = document.createElement('img');
+  hyfLogo.src = 'https://www.hackyourfuture.dk/static/logo-dark.svg';
+  hyfLogo.alt = 'HYF Logo';
+  hyfLogo.style.width = '90%';
+
+  // emptying any other tags of current google logo div
+  googleLogo.textContent = '';
+
+  // attaching hyf logo to parent div (where prev. logo used to be)
+  googleLogo.appendChild(hyfLogo);
 }
 
 hijackGoogleLogo();
