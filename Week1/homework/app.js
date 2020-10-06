@@ -3,7 +3,21 @@
 {
   const bookTitles = [
     // Replace with your own book titles
-    'harry_potter_chamber_secrets',
+    {
+      title: 'The Design of Everyday Things',
+      author: 'Don Norman',
+      alreadyRead: false,
+    },
+    {
+      title: 'The Most Human Human',
+      author: 'Brian Christian',
+      alreadyRead: true,
+    },
+    {
+      title: 'The Pragmatic Programmer',
+      author: 'Andrew Hunt',
+      alreadyRead: true,
+    },
   ];
 
   // Replace with your own code
