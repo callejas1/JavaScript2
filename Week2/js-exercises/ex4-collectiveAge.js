@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  
  ** Exercise 4: Collective age **
@@ -10,24 +12,31 @@
 
 function collectiveAge(people) {
   // return the sum of age for all the people
+
+  // reduce will get ages from arr -> sum it all together & return statement will then divide by the amount of HYF members
+  const averageAge = people.reduce((total, number) => {
+    return total + parseInt(number.age) / people.length;
+  }, 0)
+
+  return averageAge;
 }
 
 const hackYourFutureMembers = [{
-    name: 'Wouter',
-    age: 33
-  },
-  {
-    name: 'Federico',
-    age: 32
-  },
-  {
-    name: 'Noer',
-    age: 27
-  },
-  {
-    name: 'Tjebbe',
-    age: 22
-  },
+  name: 'Wouter',
+  age: 33
+},
+{
+  name: 'Federico',
+  age: 32
+},
+{
+  name: 'Noer',
+  age: 27
+},
+{
+  name: 'Tjebbe',
+  age: 22
+},
 ];
 
-console.log("The collective age of the HYF team is: " + collectiveMembers(hackYourFutureMembers));
+console.log("The collective age of the HYF team is: " + collectiveAge(hackYourFutureMembers));

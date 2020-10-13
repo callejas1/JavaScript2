@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  
  ** Exercise 3: Lemon allergy **
@@ -14,6 +16,10 @@
 
 function takeOutLemons(basket) {
   // your code goes in here. The output is a string 
+
+  // filter will look for the items inside arr that do not have the word Lemon in it and return them
+  const byeLemon = basket.filter(fruit => fruit !== 'Lemon');
+  return 'My mom bought my a fruit basket, containing ' + byeLemon;
 }
 
 const fruitBasket = ['Apple', 'Lemon', 'Grapefruit', 'Lemon', 'Banana', 'Watermelon', 'Lemon'];
