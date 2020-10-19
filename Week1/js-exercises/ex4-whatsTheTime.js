@@ -15,8 +15,9 @@
 
 function displayCurrentTime() {
   // toLocaleTimeString will convert date to string & change format convention
-  const date = new Date().toLocaleTimeString('en-US');
+  const date = new Date().toLocaleTimeString('nl-NL');
   document.body.innerText = date;
 }
 
 setInterval(displayCurrentTime, 1000);
+displayCurrentTime();

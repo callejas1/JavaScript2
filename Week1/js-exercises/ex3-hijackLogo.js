@@ -19,19 +19,11 @@ function hijackGoogleLogo() {
   // your code goes in here
 
   // const will look for the google homepage logo
-  let googleLogo = document.querySelector('#hplogo');
+  const googleLogo = document.querySelector('#hplogo');
 
-  // create hyf image element & set attributes to replace google logo with
-  let hyfLogo = document.createElement('img');
-  hyfLogo.src = 'https://www.hackyourfuture.dk/static/logo-dark.svg';
-  hyfLogo.alt = 'HYF Logo';
-  hyfLogo.style.width = '90%';
-
-  // emptying any other tags of current google logo div
-  googleLogo.textContent = '';
-
-  // attaching hyf logo to parent div (where prev. logo used to be)
-  googleLogo.appendChild(hyfLogo);
+  //overriding prev source and sourceset
+  googleLogo.src = 'https://www.hackyourfuture.dk/static/logo-dark.svg';
+  googleLogo.srcset = 'https://www.hackyourfuture.dk/static/logo-dark.svg';
 }
 
 hijackGoogleLogo();
