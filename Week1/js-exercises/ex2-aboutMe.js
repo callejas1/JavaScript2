@@ -18,7 +18,7 @@ document.body.style.fontFamily = 'Arial, sans-serif';
 const nickname = document.querySelector('#nickname');
 const favFood = document.querySelector('#fav-food');
 const hometown = document.querySelector('#hometown');
-const li = document.querySelectorAll('li');
+const liElements = document.querySelectorAll('li');
 
 // adding my info to each span
 nickname.innerText = 'Yos';
@@ -26,9 +26,8 @@ favFood.innerText = 'Chickpea curry';
 hometown.innerText = 'Chinandega';
 
 // will loop through each li item and add the class name to each
-for (let i = 0; i < li.length; i++) {
-  let addClass = li[i];
-  addClass.className = 'list-items';
+for (const li of liElements) {
+  li.className = 'list-items';
 }
 
 // declaring variable to create <img>
