@@ -19,24 +19,28 @@
 
 const cat = document.querySelector('img');
 let position = 0;
-
+let steps = 10;
 let initInter = setInterval(catWalk, 50);
+let isWalking = true;
 
 function catWalk() {
+  if (isWalking) {
+    position += steps;
+  }
   cat.style.left = position + 'px';
-  position += 10;
+
   // reset position when user screen width is reached
-  if (position === screen.width) {
+  if (position > screen.width) {
     position = 0;
   }
-  // change image url and stop interval
-  else if (position === screen.width / 2) {
+
+  // change cat source to dancing cat gif and continue the walk
+  if ((position + (cat.width / 2)) >= ((screen.width / 2) - (steps / 2)) && position + (cat.width / 2) <= (screen.width / 2) + (steps / 2) && isWalking) {
     cat.src = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif?itemid=10561424';
-    clearInterval(initInter);
+    isWalking = false;
     setTimeout(function () {
       cat.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
-      setInterval(catWalk, 50)
+      isWalking = true;
     }, 5000);
   }
 }
-
